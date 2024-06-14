@@ -1,0 +1,22 @@
+{
+    "manifest_version": 2,
+    "name": "YouTube Pause and Resume",
+    "version": "1.0",
+    "description": "Pauses YouTube video when switching tabs or leaving Chrome, resumes when returning.",
+    "permissions": [
+      "tabs",
+      "https://*.youtube.com/*",
+      "activeTab"
+    ],
+    "background": {
+      "scripts": ["background.js"],
+      "persistent": false
+    },
+    "content_scripts": [
+      {
+        "matches": ["https://*.youtube.com/*"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
